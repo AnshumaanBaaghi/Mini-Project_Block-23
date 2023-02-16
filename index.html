@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body{
+        margin: 0;
+        padding: 0;
+        font-family: sans-serif;
+      }
+      #main {
+        display: flex;
+        justify-content: space-around;
+        align-items: end;
+      }
+      #squares {
+        display: grid;
+        width: 500px;
+        height: 500px;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+      }
+      .square {
+        border: solid;
+        background-color: yellow;
+      }
+      .active {
+        background-color: #ec9998;
+      }
+      #directions {
+        width: 250px;
+        height: 250px;
+        border: solid;
+        background-color: #cee2f4;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+      #directions > div {
+        display: flex;
+        gap: 40px;
+      }
+      #directions p {
+        text-align: center;
+        font-size: 35px;
+        margin: 10px;
+        cursor: pointer;
+      }
+      #info{
+        position: fixed;
+        bottom: 0;
+        padding: 10px 0px;
+        text-align: center;
+        width: 100vw;
+        background-color: aquamarine;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="main">
+      <div id="squares"></div>
+      <div id="directions">
+        <p onclick="changeSquare('top')">&uarr;</p>
+        <div>
+          <p onclick="changeSquare('left')">&larr;</p>
+          <p onclick="changeSquare('right')">&rarr;</p>
+        </div>
+        <p onclick="changeSquare('bottom')">&darr;</p>
+      </div>
+    </div>
+    <div id="info">You can move the square by using keyboard keys as well</div>
+  </body>
+</html>
+<script src="./index.js"></script>
